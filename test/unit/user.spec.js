@@ -7,7 +7,7 @@ describe('Unit test for Users', () => {
     it('should return a list of users', (done) => {
       userService.list()
         .then((list) => {
-          expect(list.length).toBe(5)
+          expect(list.length).to.equal(5)
           done()
         })
         .catch(done)
@@ -19,7 +19,7 @@ describe('Unit test for Users', () => {
         nome: 'Lucas 6'
       })
         .then((list) => {
-          expect(list.length).toBe(6)
+          expect(list.length).to.equal(6)
           done()
         })
         .catch(done)
@@ -28,7 +28,7 @@ describe('Unit test for Users', () => {
     it('should return 1 user', (done) => {
       userService.one({code: 4})
         .then((list) => {
-          expect(list.length).toBe(1)
+          expect(list.length).to.equal(1)
           done()
         })
         .catch(done)
@@ -39,7 +39,7 @@ describe('Unit test for Users', () => {
     it('should return 1 user', (done) => {
       userService.one()
         .catch((err) => {
-          expect(err).toBeInstanceOf(Error)
+          expect(err).to.be.an.instanceof(Error)
           done()
         })
     })
